@@ -1,0 +1,267 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}
+.container-header{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color:#ccd5ae;
+}
+.container-header h4{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #503e2b;
+}
+.container-header ul{
+    display: flex;
+    width: 60%;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-header ul li a{
+    text-decoration: none;
+}
+.container-header ul li a:hover{
+    color: rgb(172, 66, 66);
+}
+/* Hamburger*/
+.menu-toggle{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span{
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: #503e2b;
+}
+
+/*hamburger menu animation*/
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(43deg);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-43deg);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform:scale(0);
+}
+
+.titlebg{
+    display: flex;
+    background-color: rgb(123, 188, 242);
+    background-image: url(./assets/img/indonesia-wallpaper-hd-9.jpg);
+    height: 75vh;
+    background-size: cover;
+    color: #503e2b;
+
+}
+.trans{
+    background-color: rgba(212, 212, 212, 0.523);
+    width: 100%;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    font-size: 6rem;
+    text-align: center;
+    align-items: center;
+    
+}
+.trans p{
+    text-align: center;
+    color: black;
+
+}
+.nav-des{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 12vh;
+}
+.nav-des a{
+    color: black;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+
+main{
+    background-color: #faedcd;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.container-2{
+    display: flex;
+    flex-wrap:wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.wisata{
+    padding: 10px;
+
+}
+.wisata h2{
+    scroll-margin-top: 6rem;
+}
+.wisata:hover{
+    background-color: #ccd5ae;
+    border-radius: 20px;
+}
+h2{
+    text-align: center;
+}
+.wisata img{
+    width: 400px;
+    height: 250px;
+}
+.container-2 p{
+    width: 400px;
+    text-align: justify;
+}
+.wisata p a{
+    color: black;
+}
+.wisata p a:hover{
+    color: rgb(152, 44, 44);
+}
+footer{
+    padding-bottom: 20px;
+    padding-left: 20px;
+    background-color: #503e2b;
+    color: whitesmoke;
+}
+
+/* RESPONSIVE */
+@media (min-width:620px) and (max-width: 1200px){
+    main{
+        background-color: #adc178;
+    }
+    .titlebg{
+        height: 75vh;
+    }
+    h1{
+        font-size: 5rem;
+        text-align: center;
+        align-items: center;
+    }
+   .nav-des a{
+        display: none;
+    }
+    .container-header ul{
+        display: flex;
+        width: 60%;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+        /* margin: 0;
+        padding: 10px 0; */
+        background-color: #ccd5ae;
+        
+    }
+
+    .container-header ul li a{
+        color: #503e2b;
+        font-weight: 900;
+    }
+    .menu-toggle{
+        display: none;
+    }
+    .container-2{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        /* flex-direction: column; */
+        align-items: center;
+    }
+}
+@media (max-width: 619px){
+    main{
+        background-color: #fec89a;
+    }
+    .container-1 ul{
+        background-color: rgb(129, 93, 27);
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        height: 85vh;
+        justify-content: space-evenly;
+        transform: translate(100%);
+        transition: 0.5s;
+    }
+    .container-header ul.slide{
+        transform: translateX(0);
+    }
+    .container-header ul li a{
+        color: aliceblue;
+    }
+    .container-header ul li a:hover{
+        color: rgb(147, 176, 200);
+    }
+
+    .titlebg{
+        height: 85vh;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    .trans p{
+        font-size: 0.9rem;
+    }
+   .nav-des a{
+        display: none;
+    }
+
+    .container-2{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .wisata{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .wisata img{
+        width:300px ;
+        height: 170px;
+    }
+    .wisata p{
+        width: auto;
+        padding: 20px;
+    }
+}
